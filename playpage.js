@@ -139,3 +139,4 @@ function checkAnswer(selectedAnswer) {
 
 // Initialize the game by loading the first question
 loadQuestion(currentQuestionIndex);
+// update
