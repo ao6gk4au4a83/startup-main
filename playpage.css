@@ -53,7 +53,7 @@ nav ul {
     display: flex; /* Set to flex to keep items on the same line */
     align-items: center; /* Vertically center the items */
     margin-left: 10px; /* Adjust the margin for spacing */
-    font-size: 32px;
+    font-size: 28px;
 }
 
 #usernameText {
