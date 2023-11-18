@@ -128,6 +128,7 @@ function checkAnswer(selectedAnswer) {
     } else {
         // After showing the score, navigate to the final.html page
         setTimeout(() => {
+            localStorage.setItem('score', score);
             window.location.href = "final.html";
         }, 0); // Delay in milliseconds (2 seconds in this example)
     }
