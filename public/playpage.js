@@ -11,17 +11,16 @@ if (name) {
     document.getElementById('usernameText').textContent = name;
 }
 
-
 // Questions and answers
 const questions = [
-    {question: "What is the capital of France?",img:"https://media.istockphoto.com/id/1185953092/photo/the-main-attraction-of-paris-and-all-of-europe-is-the-eiffel-tower-in-the-rays-of-the-setting.jpg?s=612x612&w=0&k=20&c=ZneUFVlR5TPCooxRV1rldUAadqLxZEvOoyVCOrtpcRQ=", options: ["Paris", "Madrid", "Helsinki", "Rome"],correctAnswer: "Paris",},
-    {question: "What is the capital of Spain?", img:"https://media.nomadicmatt.com/2023/madriditinerary.jpeg", options: ["Paris", "Madrid", "Budapest", "Rome"],correctAnswer: "Madrid",},
-    {question: "What is the capital of Germany?",img:'https://www.germany.travel/media/redaktion/staedte_kultur_content/Berlin_Brandenburger_Tor_im_Sonnenuntergang_Leitmotiv_German_Summer_Cities.jpg', options: ['Luxembourg City', 'Berlin', 'Minsk', 'Vatican City'], correctAnswer: "Berlin"},
-    {question: "What is the capital of Poland?",img:'https://facts.net/wp-content/uploads/2023/07/48-facts-about-warsaw-1688194047.jpeg', options: ['Prague', 'Riga', 'Warsaw', 'Vatican City'], correctAnswer: "Warsaw"},
-    {question: "What is the capital of Ukraine?",img:'https://cdn.britannica.com/18/194818-050-E7A7A993/view-Kiev-Ukraine.jpg', options: ['Helsinki', 'Kyiv', 'Monaco', 'Madrid'], correctAnswer: "Kyiv"},
-    {question: "What is the capital of Russia?",img:'https://a.cdn-hotels.com/gdcs/production29/d1375/234f7170-c9f4-4cee-a372-1a198e388483.jpg?impolicy=fcrop&w=800&h=533&q=medium', options: ['Moscow', 'Zagreb', 'Valletta', 'Oslo'], correctAnswer: "Moscow"},
-    {question: "What is the capital of Italy?",img:'https://res.klook.com/image/upload/Mobile/City/afmqgg5h0jl9wnr1dfmf.jpg', options: ['Podgorica', 'Sofia', 'Rome', 'Berlin'], correctAnswer: "Rome"},
-    {question: "What is the capital of Cyprus?",img:'https://touringhighlights.com/wp-content/uploads/2022/05/Nicosia-1.jpg', options: ['Nicosia', 'Belgrade', 'Vilnius', 'Sarajevo'], correctAnswer: "Nicosia"},
+    { question: "What is the capital of France?", img: "https://media.istockphoto.com/id/1185953092/photo/the-main-attraction-of-paris-and-all-of-europe-is-the-eiffel-tower-in-the-rays-of-the-setting.jpg?s=612x612&w=0&k=20&c=ZneUFVlR5TPCooxRV1rldUAadqLxZEvOoyVCOrtpcRQ=", options: ["Paris", "Madrid", "Helsinki", "Rome"], correctAnswer: "Paris", },
+    { question: "What is the capital of Spain?", img: "https://media.nomadicmatt.com/2023/madriditinerary.jpeg", options: ["Paris", "Madrid", "Budapest", "Rome"], correctAnswer: "Madrid", },
+    { question: "What is the capital of Germany?", img: 'https://www.germany.travel/media/redaktion/staedte_kultur_content/Berlin_Brandenburger_Tor_im_Sonnenuntergang_Leitmotiv_German_Summer_Cities.jpg', options: ['Luxembourg City', 'Berlin', 'Minsk', 'Vatican City'], correctAnswer: "Berlin" },
+    { question: "What is the capital of Poland?", img: 'https://facts.net/wp-content/uploads/2023/07/48-facts-about-warsaw-1688194047.jpeg', options: ['Prague', 'Riga', 'Warsaw', 'Vatican City'], correctAnswer: "Warsaw" },
+    { question: "What is the capital of Ukraine?", img: 'https://cdn.britannica.com/18/194818-050-E7A7A993/view-Kiev-Ukraine.jpg', options: ['Helsinki', 'Kyiv', 'Monaco', 'Madrid'], correctAnswer: "Kyiv" },
+    { question: "What is the capital of Russia?", img: 'https://a.cdn-hotels.com/gdcs/production29/d1375/234f7170-c9f4-4cee-a372-1a198e388483.jpg?impolicy=fcrop&w=800&h=533&q=medium', options: ['Moscow', 'Zagreb', 'Valletta', 'Oslo'], correctAnswer: "Moscow" },
+    { question: "What is the capital of Italy?", img: 'https://res.klook.com/image/upload/Mobile/City/afmqgg5h0jl9wnr1dfmf.jpg', options: ['Podgorica', 'Sofia', 'Rome', 'Berlin'], correctAnswer: "Rome" },
+    { question: "What is the capital of Cyprus?", img: 'https://touringhighlights.com/wp-content/uploads/2022/05/Nicosia-1.jpg', options: ['Nicosia', 'Belgrade', 'Vilnius', 'Sarajevo'], correctAnswer: "Nicosia" },
     // {question: "What is the capital of Germany?",img:'', options: ['Berlin', 'Copenhagen', 'Nur-Sultan', 'Bern'], correctAnswer: "Berlin"},
     // {question: "What is the capital of Belgium?",img:'', options: ['Brussels', 'Monaco', 'Tallinn', 'Vilnius'], correctAnswer: "Brussels"},
     // {question: "What is the capital of Finland?",img:'', options: ['Monaco', 'Helsinki', 'Vaduz', 'Helsinki'], correctAnswer: "Helsinki"},
@@ -98,7 +97,7 @@ function loadQuestion(questionIndex) {
     // Set the image source
     const questionImage = document.getElementById("questionImage");
     questionImage.src = currentQuestion.img;
-    
+
 
     // Clear previous choices
     choicesList.innerHTML = "";
@@ -129,10 +128,11 @@ function checkAnswer(selectedAnswer) {
         // After showing the score, navigate to the final.html page
         setTimeout(() => {
             localStorage.setItem('score', score);
+            localStorage.setItem('username', name);
             window.location.href = "final.html";
         }, 0); // Delay in milliseconds (2 seconds in this example)
     }
-    
+
 
     // Update the score display
     scoreElement.textContent = `Score: ${score}`;
