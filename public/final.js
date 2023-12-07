@@ -3,7 +3,7 @@ var score = localStorage.getItem('score');
 var username = localStorage.getItem('username');
 
 // Display the score on the final page
-document.getElementById('final-score').innerText = score + '/50';
+document.getElementById('final-score').innerText = score + '/7';
 
 // Define the saveScore function
 async function saveScore(score) {
