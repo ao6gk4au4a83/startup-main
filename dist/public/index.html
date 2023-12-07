@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>My Homepage</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+<body>
+    <header>
+        <h1>7 New World Wonders Quiz Quiz</h1>
+    </header>
+
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Homepage</a></li>
+            <li><a href="signup.html">Sign Up</a></li>
+        </ul>
+    </nav>
+    <img alt="Flags" src="https://transcode-v2.app.engoo.com/image/fetch/f_auto,c_lfill,w_300,dpr_3/https://assets.app.engoo.com/images/5Z2eP5Tfe0anTWCtliOV2v.jpeg" />
+    <section id="about">
+        <h2>Start the Game</h2>
+        <form>
+            <label for="name">Name: </label>
+            <input type="text" id="nameInput" placeholder="your name here" required pattern="[Aa].*"><br>
+            <label for="password">Password: </label>
+            <input type="password" id="password" placeholder="your password here" required pattern="[Aa].*"><br>
+            <button onclick="storeNameAndRedirect()">Play</button>
+        </form>
+    </section>
+
+    <h1>Random Quote Generator</h1>
+    <button onclick="displayQuote()">Get Random Quote</button>
+    <div id="quote"></div>
+    
+
+</body>
+<script src="index.js"></script>
+<footer>
+    <a href="https://github.com/ao6gk4au4a83/startup-main">GitHub</a>
+</footer>
+</html>
+
+
+
