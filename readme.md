@@ -1,9 +1,9 @@
-# Typing Master
+# 7 New World Wonders
 
-## Description deliverable
+## Description
 
-### Elevator pitch
-Have you ever wanted to increase your typing speed? Typing Master is he ultimate online typing game that will turbocharge your typing skills while having a blast! Whether you're a seasoned typist looking to sharpen your speed or a newbie eager to learn, our game offers an exhilarating and educational experience.
+
+Welcome to the 7 World Wonders Quiz! You can test your knowledge about the incredible architectural and historical wonders around the world.
 ### Design
 ![Screenshot 2023-09-23 192756](https://github.com/ao6gk4au4a83/startup/assets/108373757/03dc78be-6f5c-4c9d-8357-1257563b5278)
 
