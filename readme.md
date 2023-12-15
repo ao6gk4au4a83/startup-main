@@ -7,6 +7,8 @@
 Engage in a thrilling journey around the globe with our "7 New World Wonders Quiz Game"! Designed for enthusiasts of history, culture, and travel, this game challenges players to test their knowledge about the seven new wonders of the world. Experience a fun and educational way to explore these magnificent sites, right from your phone.
 
 ### Game Design
+<img src="https://static.vecteezy.com/system/resources/previews/006/140/088/original/design-of-quiz-in-gradient-color-question-and-answers-template-quiz-game-in-tv-show-vector.jpg"/>
+
 
 The game includes a user-friendly interface with vibrant graphics that represent each of the seven wonders. Players will navigate through a series of questions, with each question delving into fascinating facts and trivia about these iconic landmarks.
 
