@@ -1,14 +1,22 @@
-function getUrlParameter(name) {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(name);
-}
+async function loadUsername() {
+    try {
+        // Simulate async operation with a Promise
+        const userName = await new Promise((resolve, reject) => {
+            // Simulate async delay
+            setTimeout(() => {
+                resolve(localStorage.getItem('userName'));
+            }, 1000); // 1 second delay
+        });
 
-// Get the name parameter from the URL
-const name = getUrlParameter('name');
-
-if (name) {
-    // Display the name in the "Username" section
-    document.getElementById('usernameText').textContent = name;
+        if (userName) {
+            document.getElementById('playerName').textContent = userName;
+        } else {
+            document.getElementById('playerName').textContent = 'No username set';
+        }
+    } catch (error) {
+        console.error('Error loading username:', error);
+        document.getElementById('playerName').textContent = 'Error loading username';
+    }
 }
 
 // Questions and answers
@@ -104,4 +112,6 @@ function checkAnswer(selectedAnswer) {
 
 // Initialize the game by loading the first question
 loadQuestion(currentQuestionIndex);
+// Call the async function
+loadUsername();
 // update

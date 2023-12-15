@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>My Homepage</title>
     <link rel="stylesheet" type="text/css" href="index.css">
+
 <body>
     <header>
         <h1>7 New World Wonders Quiz Quiz</h1>
@@ -12,33 +14,57 @@
 
     <nav>
         <ul>
-            <li><a href="index.html">Homepage</a></li>
-            <li><a href="signup.html">Sign Up</a></li>
+            <li><a href="/">Homepage</a></li>
+            <!-- <li><a href="signup.html">Sign Up</a></li> -->
         </ul>
     </nav>
-    <img alt="Flags" src="https://transcode-v2.app.engoo.com/image/fetch/f_auto,c_lfill,w_300,dpr_3/https://assets.app.engoo.com/images/5Z2eP5Tfe0anTWCtliOV2v.jpeg" />
+    <img alt="Flags"
+        src="https://transcode-v2.app.engoo.com/image/fetch/f_auto,c_lfill,w_300,dpr_3/https://assets.app.engoo.com/images/5Z2eP5Tfe0anTWCtliOV2v.jpeg" />
     <section id="about">
         <h2>Start the Game</h2>
         <form>
-            <label for="name">Name: </label>
-            <input type="text" id="nameInput" placeholder="your name here" required pattern="[Aa].*"><br>
-            <label for="password">Password: </label>
-            <input type="password" id="password" placeholder="your password here" required pattern="[Aa].*"><br>
-            <button onclick="storeNameAndRedirect()">Play</button>
+            <div>
+                <!-- Displayed when needing authentication -->
+                <div id="loginControls" style="display: none">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Username</span>
+                        <input class="form-control" type="text" id="userName" placeholder="your@email.com" />
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Password</span>
+                        <input class="form-control" type="password" id="userPassword" placeholder="password" />
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="loginUser()">Login</button>
+                    <button type="button" class="btn btn-primary" onclick="createUser()">Create</button>
+                </div>
+                <!-- Displayed when ready to play -->
+                <div id="playControls" style="display: none">
+                    <div id="playerName"></div>
+                    <button type="button" class="btn btn-primary" onclick="play()">Play</button>
+                    <button type="button" class="btn btn-secondary" onclick="logout()">Logout</button>
+                </div>
+            </div>
+            <!-- Error dialog -->
+            <div class="modal fade" id="msgModal" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content text-dark">
+                        <div class="modal-body">error message here</div>
+
+                    </div>
+                </div>
+            </div>
         </form>
     </section>
 
     <h1>Random Quote Generator</h1>
     <button onclick="displayQuote()">Get Random Quote</button>
     <div id="quote"></div>
-    
+
 
 </body>
-<script src="index.js"></script>
+<script src="signup.js"></script>
 <footer>
     <a href="https://github.com/ao6gk4au4a83/startup-main">GitHub</a>
 </footer>
+<script src="main.js"></script>
 </html>
-
-
-
