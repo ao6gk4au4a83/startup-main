@@ -68,3 +68,87 @@
 </footer>
 <script src="main.js"></script>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        class Todo extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    formtask: '',
+                    tasks: [{"task":"Wash Clothes","completed":false},{"task":"Sweep Floor","completed":true}]
+                };
+
+                this.handleChange = this.handleChange.bind(this);
+                this.handleSubmit = this.handleSubmit.bind(this);
+                this.handleToggle = this.handleToggle.bind(this);
+                this.handleFilter = this.handleFilter.bind(this);
+            }
+
+            handleChange(event) {
+                this.setState({formtask: event.target.value});
+            }
+
+            handleSubmit(event) {
+                event.preventDefault();
+                if (this.state.formtask !== '') {
+                    this.setState({
+                        tasks: [...this.state.tasks, {"task": this.state.formtask, "completed": false}],
+                        formtask: ''
+                    });
+                }
+            }
+
+            handleToggle(event, index) {
+                const tasks = this.state.tasks.map((task, idx) => {
+                    if (idx === index) {
+                        return {...task, completed: !task.completed};
+                    }
+                    return task;
+                });
+                this.setState({ tasks });
+            }
+
+            handleFilter() {
+                this.setState({
+                    tasks: this.state.tasks.filter(task => !task.completed)
+                });
+            }
+
+            render() {
+                const listItems = this.state.tasks.map((thistask, index) => (
+                    <li className={thistask.completed ? "strike" : "todo"} 
+                        onClick={event => this.handleToggle(event, index)}
+                        key={index}>{thistask.task}</li>
+                ));
+
+                return (
+                    <div>
+                        <h1>Todo List</h1>
+                        <form onSubmit={this.handleSubmit}>
+                            <label>
+                                Task:
+                                <input type="text" value={this.state.formtask} onChange={this.handleChange} />
+                            </label>
+                            <input type="submit" value="Add" />
+                        </form>
+                        <ul>{listItems}</ul>
+                        <button onClick={this.handleFilter}>Clear Completed</button>
+                    </div>
+                );
+            }
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<Todo />);
+    </script>
+</body>
+</html>

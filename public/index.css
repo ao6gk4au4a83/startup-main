@@ -99,3 +99,10 @@ footer a {
     text-decoration: none;
 }
 
+.todo {
+    cursor: pointer;
+}
+
+.strike {
+    text-decoration: line-through;
+}
